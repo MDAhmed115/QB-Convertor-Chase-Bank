@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qb-converter"
+version = "1.0.0"
+description = "Convert Chase bank statement PDFs to QuickBooks-compatible QBO files"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+dependencies = [
+    "pdfplumber>=0.9.0",
+]
+
+[project.scripts]
+qb-converter = "src.app:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
